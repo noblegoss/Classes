@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    function solution(str){
+        let tiret = '_';
+        let newStr = [];
+        if(str.length === 0) return [];
+        if(str.length % 2 === 0){
+            str = str;
+        } else{
+            str += tiret; // first we check if the length is odd. If its odd we add the underscore
+        }
+        for(let i = 0; i < str.length; i++){
+
+            let letter = str[i];
+
+            // if(i % 2 !== 0){ // we check if the index is odd
+            //     newStr.push(str[i-1] + letter);// if its odd, we push to the array the previous element and the current element. 
+            //     //For when the length is odd,we add the underscore, but we seperate again in pairs of two, just the 2nd element is the underscore for that possibility 
+            // }
+            if(i % 2 === 0){ // we check if the index is even
+                newStr.push(letter + str[i+1]);// if its odd, we push to the array the previous element and the current element. 
+                //For when the length is odd,we add the underscore, but we seperate again in pairs of two, just the 2nd element is the underscore for that possibility 
+            }
+        }
+
+        return newStr
+    }
+    console.log(solution('abc')) // ["ab", "c_"]
+    console.log(solution('abcdef')) // ["ab", "cd", "ef"]
+    console.log(solution('abcdefg')) //["ab", "cd", "ef", "g_"]
+    console.log(solution('')) // []
+    </script>
+</body>
+</html>
