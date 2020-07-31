@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    function toWeirdCase(string){
+        // var res = [];
+        // var k = 0;
+        
+        // for (var i=0; i<string.length; i++){
+            
+        //     res.push( k % 2 == 0 ? string[i].toUpperCase(): string[i].toLowerCase() );
+        //     k++;
+        //     if (string[i] == ' ') k=0;
+            
+        // }
+        // return res.join("");
+
+        return string.split(' ').map((elem) => {
+            let word = "";
+            for(i=0; i < elem.length; i++){
+                i % 2 == 0 ? word += elem[i].toUpperCase() : word += elem[i]; 
+            }
+            return word;
+        }).join(' ');
+    }
+
+        console.log(toWeirdCase('This is a test')); //ThIs iS A TeSt
+    //    console.log(toWeirdCase('String')); //StRiNg
+    //    console.log(toWeirdCase('Weird string case')); // WeIrD StRiNg cAsE
+    </script>
+</body>
+</html>

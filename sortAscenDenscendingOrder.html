@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Write your code here:
+
+function sortYears(array) {
+  return array.sort(function(a,b) {
+    return  b - a; // for ascending order: return a -b
+  })
+}
+
+
+// Feel free to uncomment the below code to test your function:
+
+const years = [1970, 1999, 1951, 1982, 1963, 2011, 2018, 1922]
+
+console.log(sortYears(years))
+// Should print [ 2018, 2011, 1999, 1982, 1970, 1963, 1951, 1922 ]
+
+    </script>
+</body>
+</html>
