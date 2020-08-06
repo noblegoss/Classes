@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changeBackgrColor</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .colorBtn{
+            padding: 0.25rem 0.5rem;
+            border:  3px solid #fefefe;
+            border-radius: 7px;
+            color:  #fefefe;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            text-transform: capitalize;
+            cursor: pointer;
+            outline: none;
+        }
+        .colorBtn:hover{
+            background: rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <button type="button" class="colorBtn">Press here to change color</button>
+</body>
+<script type="text/javascript">
+
+    const colorBtn = document.querySelector('.colorBtn');
+
+    const bodyBcg = document.querySelector('body');
+
+    const colors = ['yellow', 'red', 'green', 'lightblue', 'purple', 'pink', 'orange'];
+
+    colorBtn.addEventListener('click', changeColor);
+
+    function changeColor(){
+        bodyBcg.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+</script>
+</html>
