@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            text-align: center;
+        }
+        .hexColor{
+            text-transform: capitalize;
+        }
+        .hex{
+            font-size: 1.8rem;
+        }
+        
+        .hexBtn{
+            color: #f15025;
+            border: 3px solid #f15025;
+            border-radius: 7px;
+            background: rgba(0,0,0,0.5);
+            font-size: 1.6rem;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            outline:none;
+            text-transform: capitalize;
+        }
+        .hexBtn:hover{
+            background: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+    <h2 class="hexColor">this hex color is : <span class="hex"></span></h2>
+    <button type="button" class="hexBtn">press here to change color</button>
+    </div>
+</body>
+<script type="text/javascript">
+
+    let hexNumber = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+    let body = document.querySelector('body');
+    let hexBtn = document.querySelector('.hexBtn');
+
+    hexBtn.addEventListener('click', showHexNumber);
+
+    function showHexNumber(){
+        let hexa = '#';
+        
+        for(let i =0; i < 6; i++){ // 06 bcz of 'hexadecimal'
+
+            let random = Math.floor(Math.random() * hexNumber.length);
+            hexa += hexNumber[random];
+            
+        }
+        
+        body.style.background = hexa;
+        document.querySelector('.hex').innerHTML = hexa;
+
+        return hexa;
+    }
+
+ console.log(showHexNumber())
+</script>
+</html>
