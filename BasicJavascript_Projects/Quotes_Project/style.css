@@ -1,0 +1,45 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    background: #ffd0a8;
+    font-family: 'calibri', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.container{
+    text-align: center;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    flex: 0 0 80%;  /* no matter the size of the screen width'll always be 80%*/
+}
+
+#quoteBtn{
+    border: none;
+    color: #fff;
+    background: #d89156;
+    font-size: 1.3rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+#quoteBtn:hover{
+    color: #ffd000;
+}
+
+blockquote{
+    background: #f9f9f9;
+    border-left: 10px solid#fcdbbf;
+    margin: 1.5rem;
+    padding: 0.5rem;
+}
+ 
+#quoteAuthor{
+    color: #ffbb00;
+}
