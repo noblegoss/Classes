@@ -1,0 +1,45 @@
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('img/back_img.jpg')center/cover no-repeat;
+}
+
+.images{
+    border: 1px solid black;
+    border-radius: 10px;
+    background: green;
+    min-height: 70vh;
+    background: url('img/back_img.jpg')center/cover no-repeat;
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.btn{
+    display: inline-block;
+    color: black;
+    font-size: 0.9rem;
+    border: 3px solid lightgreen;
+    border-radius: 9px;
+    outline: none;
+    cursor: pointer;
+    padding: 0.1rem 0.5rem;
+}
+.previous{
+    position: absolute;
+    top: 50%;
+    left: -1.5rem;
+
+}
+.next{
+    position: absolute;
+    top: 50%;
+    right: -1.5rem;
+}
+
+.btn:hover{
+    background-color: grey;
+}
