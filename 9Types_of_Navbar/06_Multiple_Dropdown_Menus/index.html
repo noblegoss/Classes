@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            text-align: center;
+            line-height: 60px;
+        }
+        li {
+            background-color: beige;
+            border-radius: 5px;
+            
+        }
+        nav>ul{
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+            background-color: darkgray;
+        }
+        nav>ul>li {
+            display: inline-block;
+            position: relative;
+            background-color: beige;
+            width: 110px;
+                    
+        }
+        nav ul li a{
+            text-decoration: none;
+            display: block;
+            color: chocolate;
+            
+        }
+        nav ul li a:hover{
+            color: black;
+        }
+        nav>ul>li:hover>ul{
+            display: block;
+        }
+        nav>ul>li>ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            width: 100%;
+        }
+        nav>ul>li>ul>li{
+            position: relative;
+            background-color: beige;
+        }
+        nav>ul>li>ul>li:hover>ul{
+            display: block;
+            
+        }
+        nav>ul>li>ul>li>ul{
+            position: absolute;
+            left: 100%;
+            top:0;
+            display: none;
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Survey</a>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Dropdown</a>
+                <ul>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

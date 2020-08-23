@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent NavBar</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .banner{
+            width: 100%;
+            height: 440px;
+            background-image: url(coffee-2698126_1920.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        nav{
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        ul{
+            width: 100%;
+            list-style-type: none;
+            height: 65px;
+            line-height: 40px;
+            border-radius: 4px;
+            overflow: hidden; /*bcz i'll float the child elt 'li'*/
+        }
+        ul li{
+            float: left;
+            width: 25%;
+        }
+        ul li a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: gainsboro;
+            opacity: 0.5;
+            color: #372320;
+        }
+        ul li a:hover{
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#">Survey</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
