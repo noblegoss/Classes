@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            border: 1px solid orange;
+            line-height: 45px;
+        }
+        div~p{
+            border: 1px solid orange;
+            line-height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Les evenements</h1>
+    <div id="div1">
+
+        <p id="p1">Qui est le declencheur? Le porteur d'evenement?</p>
+        <!-- <input type="button" value="inside div"> -->
+    </div>
+    <!-- <p id="p2">Autre paragraphe</p> -->
+
+    <script>
+        let div1 = document.getElementById('div1');
+        let p1 = document.getElementById('p1');
+
+        div1.addEventListener('click', divMessage, true);
+        p1.addEventListener('click', pMessage, true)
+
+        // div1.addEventListener('click', divMessage, true);
+        // p1.addEventListener('click', pMessage, false)
+
+        /* cliker sur 'p1' ne va jamais afficher son message due a 'e.stopPropagation', 
+        qui stoppe a 1 moment precis la propagation de l'evenement sur 'abre html'
+         */
+        function divMessage(e){
+            alert('Stop a la propagation');
+            e.stopPropagation()
+
+        }
+
+        function pMessage(e){
+            alert('Ceci ne s\'affichera pas');
+        }
+
+
+    </script>
+</body>
+</html>

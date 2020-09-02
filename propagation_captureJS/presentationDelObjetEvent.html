@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            border: 1px solid orange;
+            line-height: 45px;
+        }
+        div~p{
+            border: 1px solid orange;
+            line-height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Les evenements</h1>
+    <div id="div1">
+
+        <p id="p1">Qui est le declencheur? Le porteur d'evenement?</p>
+        <input type="button" value="inside div">
+
+    </div>
+
+    <p id="p2">Autre paragraphe</p>
+
+    <script>
+        let div1 = document.getElementById('div1');
+        
+        div1.addEventListener('click', message, true);
+        // tout clique inside 'div1' fait executer la fn
+        // div1 est le 'porteur' ie 'current-target', ie ou on a mis 'addEventlistener'
+        
+        // target est l'endroi ou le evenement c produit, ds notre exple il ya 3 possibiltes
+        // soit sur 'input', soit sur 'p1' ou sur 'div' (hors espace p et input).
+
+        function message(e){
+            div1.innerHTML = 'Element declencheur : ' + e.target +
+            '<br> Element porteur : '+ e.currentTarget + 
+            '<br> Le type d\'evenement : ' + e.type; // type = click
+
+        }
+
+
+    </script>
+</body>
+</html>
