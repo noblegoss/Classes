@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaires</title>
+    <style>
+        input{
+            line-height: 25px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            padding: 0.25rem 0.5rem;
+            outline: none;
+        }
+        input[type=submit]{
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valider les formulaires</h1>
+    <form  id="inscription">
+        <input type="text" name="pseudo" placeholder="Pseudo"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="email" name="email-confirmation" placeholder="confirmer votre Email"><br>
+        <input type="password" name="mdp" placeholder="mot de passe"><br>
+        <input type="submit" value="inscription" id=""><br>
+        
+    </form>
+    
+    <script>
+        let submit = document.getElementById('inscription');
+        submit.addEventListener('submit', function(){
+            alert('send');
+            erreur = 'voulaiif'
+        });
+    </script>
+</body>
+</html>

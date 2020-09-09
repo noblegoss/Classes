@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            line-height: 30px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>le Bom</h1>
+    <p></p>
+
+    <script>
+        // let langue = navigator.language;
+        // let navigateur = navigator.appName;
+        // let version = navigator.appVersion;
+        // let moteur = navigator.product;
+        // let leCookie = navigator.cookieEnabled;
+
+        // let para = document.querySelector('p');
+
+        // para.innerHTML = `<strong>La langue:</strong> ${langue}<br>
+        // <strong>navigateur:</strong> ${navigateur}<br>
+        // <strong>version:</strong> ${version}<br>
+        // <strong>moteur:</strong> ${moteur}<br>
+        // <strong>leCookie:</strong> ${leCookie}<br>`;
+
+        /*************/
+        let para = document.querySelector('p');
+        let loc  =navigator.geolocation;
+        (function(){
+            if(loc){
+                loc.getCurrentPosition(coordonnes);
+            }else {
+                para.innerHTML = 'location not available';
+            }
+        })()
+        function coordonnes(x){
+            para.innerHTML = `Latitude: ${x.coords.latitude}<br>
+            Longitude: ${x.coords.longitude}`;
+        }
+    </script>
+</body>
+</html>

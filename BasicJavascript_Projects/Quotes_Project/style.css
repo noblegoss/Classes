@@ -34,8 +34,8 @@ body{
 }
 
 blockquote{
-    background: #f9f9f9;
-    border-left: 10px solid#fcdbbf;
+    background: rgba(255, 234, 224, 0.5);
+    border-left: 10px solid #fcdbbf;
     margin: 1.5rem;
     padding: 0.5rem;
 }

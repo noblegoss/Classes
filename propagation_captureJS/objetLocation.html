@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>le Bom</h1>
+    
+    <button id="charger">charger un new document</button>
+    <button id="recharger"> Recharger le document</button>
+    <button id="remplacer">Remplacer le document</button>
+
+    <p></p>
+
+    <script>
+        let para = document.querySelector('p');
+        let charger = document.getElementById('charger');
+        let recharger = document.getElementById('recharger');
+        let remplacer = document.getElementById('remplacer');
+
+        charger.addEventListener('click', charge);
+        recharger.addEventListener('click', recharge);
+        remplacer.addEventListener('click', remplace);
+
+        function charge(){
+            location.assign('https://blog.garstasio.com/you-dont-need-jquery/selectors/');
+        }
+
+        function recharge(){
+            location.reload(); // reactualise juste la page
+        }
+
+        function remplace(){
+            location.replace('http://google.com');// on ne peut + revenir sur page precedente car n'existe +
+        }
+
+        let url = location.href;
+        let chemin = location.pathname;
+        para.innerHTML = `Url: ${url}<br>
+        Chemin: ${chemin}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>le bom</h1>
+    <p>cliquer pour ouvrir un nouvel onglet</p>
+    <button id="open">open new window</button>
+    <button id="close">close the window</button>
+    <button id="modifier">modify the window shape</button>
+
+    <script>
+        //window.alert('bonjour');
+        // let para = document.querySelector('p');
+        // para.addEventListener('click', fenetre);
+
+        // function fenetre(){
+        //     window.open('http://youtube.com', '_blank','width = 500', 'heigth =800')
+        // }
+
+        let openn = document.getElementById('open');
+        let cloze= document.getElementById('close');
+        let edit= document.getElementById('modifier');
+
+        let fenetre = '';
+
+        openn.addEventListener('click', fOpen);
+        cloze.addEventListener('click', fclose);
+        edit.addEventListener('click', fModify);
+
+        function fOpen(){
+            fenetre = window.open('http://youtube.com', '_blank','width=500', 'heigth=400');
+            
+        }
+
+        function fclose(){
+            fenetre.close();
+        }
+
+        function fModify(){
+            fenetre.resizeTo(300,300);
+        }
+ 
+
+    </script>
+</body>
+</html>

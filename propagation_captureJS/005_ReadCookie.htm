@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function setCookie() {
+            // Что бы связать временное значение cookie файла с текущим документом. 
+            //достаточно выполнить следующую операцию
+            document.cookie = "version=" + encodeURIComponent(document.lastModified);
+            // Cookie не могут содержать точку с запятой, запятые или символы разделители. 
+            //Перед сохранением значение в cookie желательно вызвать
+            // функцию encodeURIComponent() при чтении значения надо вызвать decodeURIComponent()
+            // записанный таким способом cookie сохраняются в текущем сеансе браузера но удаляются 
+            //после его закрытия.
+        }
+
+        function getCookie() {
+            alert(findCookieValue("version"));
+        }
+        // version=123; test=a1; test2=a2
+        function findCookieValue(cookieName) {
+            var allcookies = document.cookie;// c une longue chaine de caracteres
+            var pos = allcookies.indexOf(cookieName + "="); // version=
+            //var pos = document.cookie.indexOf(cookieName + "=")
+            //donne l' indice de la 1st lettre du mot chercher
+
+            // Если cookie с указанным 'именем' найден, извлечь его 'значения'.
+            if (pos != -1) {
+                var start = pos + cookieName.length + 1; 
+                // index de 'v' + version.length => version=
+                var end = allcookies.indexOf(";", start);
+                // arr.indexOf(élémentRecherché, indiceDébut) indiceDébut rarement used car 'optionel'
+
+                if (end == -1) { // cad on a affaire au dernier element
+                    end = allcookies.length; //document.cookie.length
+                    // car la 'last' key=value de document.cookie n'a pas de ';'
+
+                }
+
+                var value = allcookies.substring(start, end);
+                //str.substring(indiceA[, indiceB]);  'indiceB' est 'optionel'
+                // substring extrait des caractères de la chaîne courante à partir de indiceA 'indiceA['
+                //jusqu'à indiceB (non compris) 'indiceB]'
+
+                return `Name=${cookieName}, decodeValue=${decodeURIComponent(value)}`;
+                // return {
+                //     name: cookieName,
+                //     decodValue: decodeURIComponent(value)
+                // };
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Set cookie" onclick="setCookie()" />
+    <input type="button" value="Get cookie" onclick="getCookie()" />
+</body>
+</html>

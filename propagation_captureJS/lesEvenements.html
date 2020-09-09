@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>les Evenements</h1>
+    <a href="404.html" id="lien">liens morts</a>
+
+
+
+    <script>
+        document.querySelector('#lien').addEventListener('click', function(e){
+            e.preventDefault()
+            alert('lien mort')
+            console.log(e)
+            return false; // pr etre sur k e.preventDefault() ne sera pas excuter
+        }, true);
+
+        document.querySelector('#lien').addEventListener('contextmenu', function(e){
+            
+            alert('vous avez faits un click droit')
+            if(prompt('voulez-vous voir le context menu?') != 'ok'){
+                e.preventDefault()
+            }
+            console.log(e)
+           // return false; // pr etre sur k e.preventDefault() ne sera pas excuter
+        }, false);
+
+
+    </script>
+</body>
+</html>
