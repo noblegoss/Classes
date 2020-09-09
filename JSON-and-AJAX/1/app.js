@@ -42,9 +42,18 @@ btn.addEventListener('click', function(){
     ourRequest.onload = function(){
         // let ourData = ourRequest.responseText;
         // console.log(ourData[0]) // result is '[', bcz the browser sees ourData as a big text string;
-        let ourData = JSON.parse(ourRequest.responseText);
-        renderHTML(ourData);
+        if(ourRequest.status >= 200 && ourRequest.status < 400){
+
+            let ourData = JSON.parse(ourRequest.responseText);
+            renderHTML(ourData);
+        }
+        
     };
+
+    ourRequest.onerror = function(){ // handeling connexion error
+        alert('Connexion Error')
+    };
+    
     ourRequest.send();
 
     pageCounter++
